@@ -10,10 +10,11 @@ defaults:
 jobs:
   ubuntu:
     runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/sushrut1101/docker:latest
-
     steps:
+      # You might want to Checkout your repo first, but not mandatory
+      - uses: actions/checkout@v3
+      # Cleanup The Actions Workspace Using Custom Composite Run Actions
+      - uses: rokibhasansagar/slimhub_actions@main
       - name: Checkout
         uses: actions/checkout@v2
       
